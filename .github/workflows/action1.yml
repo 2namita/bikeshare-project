@@ -27,7 +27,7 @@ jobs:
           make all
     
       - name: Build the Docker image
-        run: docker build --file Dockerfile -t bikeshare-app .
+        run: docker build --file bike_sharing_api/Dockerfile -t bikeshare-app .
 
       - name: Push the Image
         run: docker run -d -p 80:8001 bikeshare-app
