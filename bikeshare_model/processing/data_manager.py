@@ -1,4 +1,6 @@
 import sys
+import shutil
+
 from pathlib import Path
 file = Path(__file__).resolve()
 parent, root = file.parent, file.parents[1]
@@ -89,5 +91,8 @@ def remove_old_pipelines(*, files_to_keep: t.List[str]) -> None:
     """
     do_not_delete = files_to_keep + ["__init__.py"]
     for model_file in TRAINED_MODEL_DIR.iterdir():
-        if model_file.name not in do_not_delete:
-            model_file.unlink()
+        if model_file.name not in do_not_delete:            
+            if model_file.is_file():
+                model_file.unlink()
+            elif model_file.is_dir():
+                shutil.rmtree(model_file)
