@@ -5,6 +5,9 @@ format:
 	
 lint:
 
+clean:
+	pip uninstall bikeshare_model
+	
 build: 	
 	python3 bikeshare_model/train_pipeline.py
 
@@ -15,4 +18,4 @@ package:
 	pip install --upgrade build
 	python3 -m build
 	
-all:install build test package
+all:install clean build test package 
