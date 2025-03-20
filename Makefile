@@ -9,7 +9,7 @@ clean:
 	pip uninstall bikeshare_model
 	
 build: 	
-	python3 bikeshare_model/train_pipeline.py
+	python3 bikeshare_model/train_pipeline.py --force
 
 test:
 	pytest 
@@ -18,4 +18,4 @@ package:
 	pip install --upgrade build
 	python3 -m build
 	
-all:install clean build test package 
+all:clean install  build test package 
