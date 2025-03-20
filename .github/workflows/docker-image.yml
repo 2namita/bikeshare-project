@@ -14,4 +14,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . -t --file Dockerfile --tag bikeshare-app:$(date +%s)
+      run: docker build --file Dockerfile -t bikeshare-app:$(date +%s) .
