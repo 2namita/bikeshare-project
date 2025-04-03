@@ -1,4 +1,4 @@
-#Makefile
+#Makefile to use in Git Actions
 install:
 	pip install -r requirements/test_requirements.txt
 format:
